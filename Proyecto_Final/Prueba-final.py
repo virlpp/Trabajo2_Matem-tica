@@ -101,6 +101,33 @@ if DNI2 != DNI:
      print("-------------------------------------------------------------")
      print("Operaciones finalizadas.")
      print(" ")
+
+    
+    # Expresiones lógicas en lenguaje natural a código.
+     print(" ")
+     print("-------------------------------------------------------------")  
+     print("Expresiones lógicas:")
+     print("-------------------------------------------------------------") 
+
+     # Verificar si algún dígito se repite más de 3 veces en ambos DNIs
+     for digito in conjunto_digitos.intersection(conjunto_digitos2):  # Solo revisamos dígitos comunes
+        frecuencia_total = frecuencia_digitos.get(digito, 0) + frecuencia_digitos2.get(digito, 0)
+        
+        if frecuencia_total > 2:
+            print(f"El dígito {digito} se repite más de 3 veces en ambos DNIs.")
+
+     # Un dígito no está en prensente en el primer DNI pero sí en el segundo
+     digitos_no_en_dni1 = conjunto_digitos2 - conjunto_digitos  # Dígitos en el segundo DNI pero no en el primero
+     if digitos_no_en_dni1:
+            print(f"Los siguientes dígitos están en el segundo DNI pero no en el primero: {digitos_no_en_dni1}")
+
+     #Un dígito está presente sólo en uno de los DNIs y es mayor que 3
+     digitos_mayores_3 = {digito for digito in union_digitos if int(digito) > 3}  # Dígitos mayores a 
+     digitos_presentes_solo_en_uno = digitos_mayores_3 - (conjunto_digitos.intersection(conjunto_digitos2))  # Dígitos presentes solo en uno de los DNIs
+     if digitos_presentes_solo_en_uno:
+            print(f"Los siguientes dígitos son mayores que 3 y están presentes solo en uno de los DNIs: {digitos_presentes_solo_en_uno}")
+
+    
      print("////////////////////////////////////////////////////////////////")
 
 else:
