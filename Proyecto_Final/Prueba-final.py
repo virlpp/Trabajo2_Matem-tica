@@ -33,6 +33,10 @@ if DNI2 != DNI:
     #Generación automática de los conjuntos de dígitos únicos
      conjunto_digitos = set(DNI) # Convertimos el DNI en un conjunto de dígitos únicos
      print(f"Conjunto de dígitos únicos: {conjunto_digitos}")
+    
+    #Generación automática de los conjuntos de dígitos únicos del DNI2
+     print(f"Conjunto de dígitos únicos del segundo DNI: {set(DNI2)}")  # Mostramos el conjunto de dígitos únicos del segundo DNI
+     print(" ")
 
     #Calculo de la unión de los conjuntos de dígitos de ambos DNIs
      conjunto_digitos2 = set(DNI2)  # Convertimos el segundo DNI en un conjunto de dígitos únicos
